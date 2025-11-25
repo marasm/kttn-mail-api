@@ -1,4 +1,4 @@
-package net.thekttn.kttn_mail_api;
+package net.thekttn.kttnmail;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
