@@ -1,6 +1,5 @@
 package net.thekttn.kttnmail.data.entities;
 
-import org.springframework.boot.micrometer.metrics.autoconfigure.MetricsProperties.Web.Server;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
