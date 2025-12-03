@@ -1,10 +1,15 @@
 package net.thekttn.kttnmail.data.entities;
 
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -54,4 +59,12 @@ public class MailBox
 
   @Column(name = "FWD_DEST_EMAIL_ADDRESS", nullable = false)
   private String forwardDestinationEmailAddress;
+
+  @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+  @JoinColumn(name = "MAILBOX_ID", referencedColumnName = "ID")
+  private List<EmailMessage> messages;
+
+  @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+  @JoinColumn(name = "MAILBOX_ID", referencedColumnName = "ID")
+  private List<Credential> credentials;
 }

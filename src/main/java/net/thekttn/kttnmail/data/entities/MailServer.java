@@ -36,9 +36,6 @@ public class MailServer {
   @Column(name="ID", nullable = false)
   private long id;
 
-  @Column(name="MAILBOX_ID", nullable = false)
-  private long mailboxId;
-
   @Column(name="SERVER_TYPE", nullable = false)
   private ServerType serverType;
 
